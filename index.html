@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="dashboard">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">LIFE DASHBOARD</p>
+        <h1 id="greeting">Good morning!</h1>
+        <p id="dateText" class="muted"></p>
+      </div>
+      <div class="clock-card">
+        <span id="clock">00:00:00</span>
+        <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </header>
+
+    <section class="name-panel card">
+      <div>
+        <h2>Make it yours</h2>
+        <p class="muted">Set your name for a personal greeting.</p>
+      </div>
+      <form id="nameForm" class="inline-form">
+        <input id="nameInput" type="text" maxlength="30" placeholder="Your name" autocomplete="off">
+        <button class="primary-btn" type="submit">Save name</button>
+      </form>
+    </section>
+
+    <div class="grid">
+      <section class="card timer-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">FOCUS</p>
+            <h2>Pomodoro Timer</h2>
+          </div>
+          <span id="timerStatus" class="pill">Ready</span>
+        </div>
+        <div id="timerDisplay" class="timer">25:00</div>
+        <div class="timer-controls">
+          <button id="startBtn" class="primary-btn" type="button">Start</button>
+          <button id="stopBtn" class="secondary-btn" type="button">Stop</button>
+          <button id="resetBtn" class="secondary-btn" type="button">Reset</button>
+        </div>
+        <form id="durationForm" class="duration-form">
+          <label for="durationInput">Minutes</label>
+          <input id="durationInput" type="number" min="1" max="120" value="25">
+          <button class="secondary-btn" type="submit">Set time</button>
+        </form>
+      </section>
+
+      <section class="card todo-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TODAY</p>
+            <h2>To-Do List</h2>
+          </div>
+          <span id="taskCount" class="pill">0 tasks</span>
+        </div>
+
+        <form id="taskForm" class="task-form">
+          <input id="taskInput" type="text" maxlength="100" placeholder="What needs to be done?" autocomplete="off" required>
+          <button class="primary-btn" type="submit">Add</button>
+        </form>
+
+        <div class="todo-tools">
+          <button id="sortBtn" class="text-btn" type="button">Sort tasks</button>
+          <button id="clearDoneBtn" class="text-btn danger" type="button">Clear done</button>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+        <p id="emptyState" class="empty-state">No tasks yet. Add your first task above.</p>
+      </section>
+
+      <section class="card links-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SHORTCUTS</p>
+            <h2>Quick Links</h2>
+          </div>
+        </div>
+
+        <form id="linkForm" class="link-form">
+          <input id="linkName" type="text" maxlength="30" placeholder="Name" required>
+          <input id="linkUrl" type="url" placeholder="https://example.com" required>
+          <button class="primary-btn" type="submit">Add link</button>
+        </form>
+
+        <div id="linkList" class="link-list"></div>
+        <p id="linkEmptyState" class="empty-state">Add a favorite website.</p>
+      </section>
+    </div>
+
+    <footer>
+      <p>Built with HTML, CSS & Vanilla JavaScript • Data stays in your browser</p>
+    </footer>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
